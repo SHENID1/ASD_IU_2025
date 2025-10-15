@@ -17,7 +17,6 @@
 //  3. Удаление последнего элемента
 //  4. Удаление первого элемента
 //  5. Взятие (Get) центрального элемента (id = 5 000 000)
-//  5
 //  6. Взятие (Get) последнего элемента (id = 9 999 999).
 //  Помимо кода решение должно содержать цифры, полученные при
 //  тестах. При невозможности работать с 10 000 000 записей позволительно
@@ -30,14 +29,14 @@ import com.iu3.models.Student;
 
 import java.util.*;
 
-public class PerformanceTest {
+public class TaskA0 {
 
     // Размер коллекций для теста
     private static final int N = 10_000_000;
     private static final long ID_CENTER = N / 2; // 5_000_000L
     private static final long ID_LAST = N - 1; // 9_999_999L
 
-    public static void mainA0(String[] args) {
+    public static void programA0(String[] args) {
         List<Student> baseStudents = new ArrayList<>(N);
         for (long i = 0; i < N; i++) {
             baseStudents.add(new Student(i, "Student " + i));
@@ -179,7 +178,7 @@ public class PerformanceTest {
         System.out.println("5. Get по ключу (центральный): " + timeGetCenter + " нс");
 
         start = System.nanoTime();
-        Student lastFromMap = hashMap.get((long)(N - 1));
+        Student lastFromMap = hashMap.get((long) (N - 1));
         timeGetLast = System.nanoTime() - start;
         System.out.println("Id: " + lastFromMap.getId());
         System.out.println("6. Get по ключу (последний): " + timeGetLast + " нс");
