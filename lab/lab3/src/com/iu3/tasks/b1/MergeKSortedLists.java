@@ -19,7 +19,10 @@ N - общее количество элементов во всех списк�
 
 package com.iu3.tasks.b1;
 
-import java.util.*;
+
+import com.iu3.tasks.structure.ListNode;
+
+import java.util.PriorityQueue;
 
 public class MergeKSortedLists {
     public static ListNode mergeKLists(ListNode[] lists) {
@@ -54,20 +57,6 @@ public class MergeKSortedLists {
         return dummy.next;
     }
 
-    // Вспомогательный класс для связанного списка
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     // Тестирование
     public static void main(String[] args) {
